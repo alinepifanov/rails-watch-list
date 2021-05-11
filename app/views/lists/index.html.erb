@@ -1,6 +1,9 @@
-	<div class="card" style="width: 320px" background-color="black">
-  <div class="card-body">
-<h1> My favorite movies </h1>
-  
-  </div>
-</div>
+<h1>Movie Lists</h1>
+
+<ul>
+  <% @lists.each do |list| %>
+    <li><%= link_to list.name, list_path(list) %> </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Create a New List', new_list_path, class: 'btn btn-primary' %>
